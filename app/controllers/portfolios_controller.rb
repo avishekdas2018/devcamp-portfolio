@@ -33,8 +33,11 @@ class PortfoliosController < ApplicationController
         format.html { redirect_to portfolios_path, notice: 'The Record successfully updated' } 
       else
         format.html { render :edit }
-
-      end
+       end
     end
   end
+
+  def show
+     @portfolio_item = Portfolio.find(params[:id])
+  end 
 end
